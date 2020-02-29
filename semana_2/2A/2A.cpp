@@ -5,21 +5,34 @@
 using namespace std;
 
 int main () {
-    int m, n;
+    int m, n, k = 1;
 
-    do 
+    while (true)
     {
 
         cin >> m >> n;
-        string str_line;
 
-        for (int i = 0; i < m; i++)
+        if (m == 0 || n == 0)
+            break;
+
+        cout << "Field #" << k;
+        k++;
+
+        char line0[n+1], line1[n+1], line2[n+1], out[n+1];
+
+        for (i = 0; i < n; i++)
         {
-            getline(cin, str_line);
-            vector<char> ch_line(str_line.begin(), str_line.end());
-            for (const char &c: ch_line)
-                cout << c;
+            line0[i] = '0';
+            line1[i] = '0';
         }
-    } while (m != n); 
+        for (i = 0; i < m; i++)
+            cin >> line1;
+            for (j = 0; j <= n; j++)
+            {
+                if (line1[i] == '*' && (j-1) < 0)
+                    
+            }
+
+
     return 0;
 }

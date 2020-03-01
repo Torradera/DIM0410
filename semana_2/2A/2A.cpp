@@ -1,8 +1,9 @@
 #include <iostream>
 #include <string>
-#include <vector>
 
 using namespace std;
+
+char add_warn (char a);
 
 int main () {
     int m, n, k = 1;
@@ -29,10 +30,47 @@ int main () {
             cin >> line1;
             for (j = 0; j <= n; j++)
             {
-                if (line1[i] == '*' && (j-1) < 0)
-                    
+                if (line1[j] == '*')
+                {
+                    out[j] = '*';
+                    if ((j-1) > 0 && (i-1) > 0 && (i+1) < m && (j+1) < n)
+                        add_warn(line0[j-1], out[j-1]);
+                }
             }
-
-
+        }
+    }  
     return 0;
+}
+
+char add_warn (char ch_a, char ch_b)
+{
+    switch (ch_a)
+    {
+        case '*':
+            break;
+        case '0':
+            ch_b = '1';
+            break;
+        case '1':
+            ch_b = '2';
+            break;
+        case '2':
+            ch_b = '3';
+            break;
+        case '3':
+            ch_b = '4';
+            break;
+        case '4':
+            ch_b = '5';
+            break;
+        case '5':
+            ch_b = '6';
+            break;
+        case '6':
+            ch_b = '7';
+            break;
+        case '7':
+            ch_b = '8';
+            break;
+    }
 }

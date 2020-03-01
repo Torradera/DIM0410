@@ -33,9 +33,18 @@ int main () {
                 if (line1[j] == '*')
                 {
                     out[j] = '*';
-                    if ((j-1) > 0 && (i-1) > 0 && (i+1) < m && (j+1) < n)
+                    if ((j-1) > 0 && (i-1) > 0 && (i+1) < m && (j+1) < n){
                         add_warn(line0[j-1], out[j-1]);
+                        add_warn(line0[j], out[j]);
+                        add_warn(line0[j+1], out[j+1]);
+                        add_warn(line1[j-1], out[j-1]);
+                        add_warn(line1[j+1], out[j+1]);
+                        add_warn(line2[j-1], out[j-1]);
+                        add_warn(line2[j], out[j]);
+                        add_warn(line2[j+1], out[j+1]);
+                    }
                 }
+                cout << out;
             }
         }
     }  

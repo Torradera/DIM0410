@@ -33,7 +33,7 @@ int main () {
                 if (line1[j] == '*')
                 {
                     out[j] = '*';
-                    if ((j-1) > 0 && (i-1) > 0 && (i+1) < m && (j+1) < n){
+                    if ((j-1) > 0 && (i-1) > 0 && (i+1) < m && (j+1) < n){ \\Editar condição
                         add_warn(line0[j-1], out[j-1]);
                         add_warn(line0[j], out[j]);
                         add_warn(line0[j+1], out[j+1]);

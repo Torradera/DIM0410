@@ -1,29 +1,34 @@
 #include <iostream>
 #include <cstdio>
 #include <iomanip>
+#include <fstream>
 
 using namespace std;
 
 int main()
 {
     int k, l = 1, hh_1, hh_2, h_aux = 0, h_diff = 0, h_star = 0, mm_1, mm_2, m_aux = 0, m_diff = 0, m_star = 0, diff = 0, bigg = 0;
-    char appoint[225];
+    char appoint[255], ck;
 
-    while (true)
+    while (k != '\n')
     {
+        // ck = cin.peek();
+        // if (ck == 10)
+        //     return 0;
+        // ck = 9;
         cin >> k;
 
-        if (k > 100)
-            break;
-
+        if (k > 100 || k < 1 || cin.fail())
+        {
+            return 0;
+        }
         for (int i = 0; i <= k; i++)
         {
             if (i != k)
             {
-                scanf("%d:%d %d:%d %[^\n]", &hh_1, &mm_1, &hh_2, &mm_2, appoint);
-                fflush(stdin);
+                scanf("%d:%d %d:%d %255[^\n]", &hh_1, &mm_1, &hh_2, &mm_2, appoint);
 
-                if (hh_1 < 10 || hh_1 < 10 || hh_2 > 18 || hh_2 > 18)
+                if (hh_1 < 10 || hh_2 < 10 || hh_1 > 18 || hh_2 > 18 || mm_1 < 0 || mm_1 >= 60 || mm_2 < 0 || mm_2 >= 60)
                 {
                     break;
                 }

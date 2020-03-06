@@ -7,6 +7,7 @@ using namespace std;
 int main()
 {
     int k, l = 1, hh_1, hh_2, h_aux = 0, h_diff = 0, h_star = 0, mm_1, mm_2, m_aux = 0, m_diff = 0, m_star = 0, diff = 0, bigg = 0;
+    char appoint[225];
 
     while (true)
     {
@@ -15,9 +16,24 @@ int main()
         if (k > 100)
             break;
 
-        for (int i = 0; i < k; i++)
+        for (int i = 0; i <= k; i++)
         {
-            scanf("%d:%d %d:%d", &hh_1, &mm_1, &hh_2, &mm_2);
+            if (i != k)
+            {
+                scanf("%d:%d %d:%d %[^\n]", &hh_1, &mm_1, &hh_2, &mm_2, appoint);
+                fflush(stdin);
+
+                if (hh_1 < 10 || hh_1 < 10 || hh_2 > 18 || hh_2 > 18)
+                {
+                    break;
+                }
+            }
+
+            if (i == k)
+            {
+                hh_1 = 18;
+                mm_1 = 0;
+            }
 
             if (i > 0)
             {
@@ -52,6 +68,7 @@ int main()
             }
             h_aux = hh_2;
             m_aux = mm_2;
+
         }
 
         if(bigg < 60)

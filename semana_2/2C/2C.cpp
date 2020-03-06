@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-    int k, l = 1, hh_1, hh_2, h_aux = 0, h_diff = 0, h_star = 0, mm_1, mm_2, m_aux = 0, m_diff = 0, m_star = 0, diff = 0, bigg = 0;
+    int k, l = 1, hh_1, hh_2, h_aux = 10, h_diff = 0, h_star = 0, mm_1, mm_2, m_aux = 0, m_diff = 0, m_star = 0, diff = 0, bigg = 0;
     char appoint[255], ck;
 
     while (k != '\n')
